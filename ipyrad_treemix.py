@@ -20,7 +20,7 @@ minmap = {i: 0.5 for i in imap}
 # Initialize dictionaries for storing TreeMix objects and results
 llik = {}
 # Iterate over replicate and migration values
-for rep in range(100):
+for rep in range(50):
     for mig in range(9):
         name = f"mig-{mig}-rep-{rep}"
         # Create a new TreeMix object with current parameters
