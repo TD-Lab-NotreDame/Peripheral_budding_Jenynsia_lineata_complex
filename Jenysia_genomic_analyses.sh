@@ -1,4 +1,4 @@
-##Code for genomic analyses carreid out in terminal
+##Code for genomic analyses carried out in terminal/bash
 
 ### analyses using the 83 individuals dataset
 
