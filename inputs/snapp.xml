@@ -97,11 +97,11 @@ name="rawdata">
                         <taxon id="Jmul_03795AR" spec="Taxon"/>
                         <taxon id="Jmul_03796ar" spec="Taxon"/>
                     </taxonset>
-                    <taxonset id="AF_lineata_2" spec="TaxonSet">
+                    <taxonset id="lineata_N2" spec="TaxonSet">
                         <taxon id="Jspp_06616SU" spec="Taxon"/>
                         <taxon id="Jspp_06618SU" spec="Taxon"/>
                     </taxonset>
-                    <taxonset id="AF_lineata_1" spec="TaxonSet">
+                    <taxonset id="lineata_N1" spec="TaxonSet">
                         <taxon id="Jmul_17901MT" spec="Taxon"/>
                         <taxon id="Jmul_17912RS" spec="Taxon"/>
                     </taxonset>
@@ -117,11 +117,11 @@ name="rawdata">
                         <taxon id="Jonc_03621RN" spec="Taxon"/>
                         <taxon id="Jonc_03627RN" spec="Taxon"/>
                     </taxonset>
-                    <taxonset id="darwinii_1" spec="TaxonSet">
+                    <taxonset id="darwini_1" spec="TaxonSet">
                         <taxon id="Jmul_08749LL" spec="Taxon"/>
                         <taxon id="Jmul_08748LL" spec="Taxon"/>
                     </taxonset>
-                    <taxonset id="darwinii_2" spec="TaxonSet">
+                    <taxonset id="darwini_2" spec="TaxonSet">
                         <taxon id="Jmul_08671LP" spec="Taxon"/>
                         <taxon id="Jmul_08722LC" spec="Taxon"/>
                     </taxonset>
