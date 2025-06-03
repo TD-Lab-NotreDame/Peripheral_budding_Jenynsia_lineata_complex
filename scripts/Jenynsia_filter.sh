@@ -62,7 +62,7 @@ vcftools --vcf $VCF_IN \
 wait
 #LD pruning for 1 snp per 500 bp
 vcftools --vcf filtered_final_83.recode.vcf \
- --thin 500 --recode --out filtered_final_83_LD_pruned
+ --thin 500 --recode --out inputs/filtered_final_83_LD_pruned
 wait
 ### analyses using the 30 individuals dataset
 # need snapp_remove.txt in working directory
@@ -86,9 +86,9 @@ vcftools --vcf $VCF_IN \
 mawk '!/#/' filtered_final_30_nomiss_LD_pruned.recode.vcf | wc -l
 
 # Randomly select 1000 lines from a VCF file and keep them in original order
-grep '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf > filtered_final_30_nomiss_LD_pruned_sub1000.vcf  # Copy header lines to output
+grep '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf > inputs/filtered_final_30_nomiss_LD_pruned_sub1000.vcf  # Copy header lines to output
 
-grep -v '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf | shuf | head -n 1000 | sort -n | tail -n 1000 >> filtered_final_30_nomiss_LD_pruned_sub1000.vcf
+grep -v '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf | shuf | head -n 1000 | sort -n | tail -n 1000 >> inputs/filtered_final_30_nomiss_LD_pruned_sub1000.vcf
 
 
 
@@ -152,7 +152,7 @@ grep -v '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf | shuf | head -n 1000
 #
 ##LD pruning for 1 snp per 500 bp
 #vcftools --vcf filtered_final_94.recode.vcf \
-# --thin 500 --recode --out filtered_final_94_LD_pruned
+# --thin 500 --recode --out inputs/filtered_final_94_LD_pruned
 #
 #
 
