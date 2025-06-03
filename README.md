@@ -1,7 +1,99 @@
 The files here are associated with "Peripheral budding following range expansion explains diversity and distribution of one-sided livebearing fish". Preprint available at https://doi.org/10.22541/au.174255499.93236941/v1
 
-The file Jenysia_genomic_analyses.sh walks through the analyses used in this work. The other files are used in the main code.
+The scripts folder contains the scripts used in analyses, the inputs folder contains inputs for genomic analyses, the data folder contains data files used for *.R files.
+
+The code in the *.sh files was written for use on an HPC sungrid engine system.
 
 Phylip and nexus files are also included from phylogenetic analyses.
 
-Files ending in .R were used for generating figures.
+Genomic analyses:
+
+**dDocent**
+
+This code was run in a conda environemnt \
+dDocent needs to be installed  https://ddocent.com/bioconda/ \
+fastq files must be in the working directory \
+For the 83 and 30 individuals data set do not have J. obscura samples in the working directory \
+For the 94 individuals dataset, include all fatsq files \
+Run \
+``` dDocent scripts/ddocent_config_denovo.sh```
+
+**Filtering VCF files**
+
+vcftools and vcffilter need to be installed in conda \
+run ```scripts/Jenynsia_filter.sh```
+
+
+**File conversion**
+
+download vcf2phylip https://github.com/edgardomortiz/vcf2phylip to convert to nexus, fasta, and phylip formats\
+run \
+for 83 individuals dataset \
+```python vcf2phylip.py -i inputsfiltered_final_83_LD_pruned.recode.vcf -f -n -b```\
+for 30 individuals dataset \
+```python vcf2phylip.py -i inputs/filtered_final_30_nomiss_LD_pruned_sub1000.vcf -f -n -b```\
+for 94 individuals dataset \
+```python vcf2phylip.py -i inputs/filtered_final_94_LD_pruned.recode.vcf -f -n -b```\
+
+**PCA**
+
+ipyrad needs to be installed in conda \
+compress vcf file \
+```bgzip inputs/filtered_final_83.recode.vcf > inputs/filtered_final_83.recode.vcf.gz``` \
+index the compressed file \
+```tabix inputs/filtered_final_83.recode.vcf.gz``` \
+then run the python file ```ipyrad_converter_pca``` \
+followed by ```ipyrad_pca.py```\
+A PCA figure will be output
+
+**Admixture**
+
+PLINK needs to be installed in conda \
+run ```scripts/Jenynsia_admixture.sh``` \
+Outputs CV errors and files for plotting each K in r \
+Use ```admixture_plot.R``` to plot figure in R \
+
+**IQtree and RAXML**
+
+IQtree and RAXML need to be installed in conda \ 
+First run IQtree to generate a file that will pass filters for only containing variant sites when using an ASC adjustment \
+No outgroup\
+```iqtree -s inputs/filtered_final_83_LD_pruned.recode.min4.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
+With an outgroup \
+```iqtree -s inputs/filtered_final_94_LD_pruned.recode.min4.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
+Use the output files that end in ".varsites.phy" for further analysis \
+No outgroup iqtree\
+```iqtree -s filtered_final_83_LD_pruned.recode.min4.phy.varsites.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
+No outgroup RAXML \
+```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_83_LD_pruned.recode.min4.phy.varsites.phy -n T1``` \
+With an outgroup RAXML \
+```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_94_LD_pruned.recode.min4.phy.varsites.phy -n T2``` \
+
+**SVDQuartets**
+
+generate file for SVDQuartets \
+``` cat inputs/filtered_final_83_LD_pruned.recode.min4.nexus inputs/taxpartitions.txt > inputs/svd.nexus```\
+PAUP needs to be installed and launched \
+Run \ 
+```exe inputs/svd.nexus``` \
+Then run \
+```svdq taxpartition=fish showScores=no seed=1234568 bootstrap nreps=1000 treeFile=svd.tre;```
+To save the consenses tree in newick format run \
+```savetree```
+
+**SNAPP**
+
+Beast 2 needs to be downloaded \
+
+
+
+
+
+
+
+
+
+
+
+
+
