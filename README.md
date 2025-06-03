@@ -83,7 +83,40 @@ To save the consenses tree in newick format run \
 
 **SNAPP**
 
-Beast 2 needs to be downloaded \
+Beast2 needs to be downloaded \
+Run 2 times\
+```scripts/SNAPP.sh``` \
+
+**DELINEATE**
+
+DELINEATE needs to be downloaded to conda\
+Guide tree is generated from the two SNAPP runs consensus tree using the TreeAnnotator application\
+Run ```scripts/delineate.sh```\
+
+**TreeMix**
+compress vcf file \
+```bgzip inputs/filtered_final_94.recode.vcf > inputs/filtered_final_94.recode.vcf.gz``` \
+index the compressed file \
+```tabix inputs/filtered_final_94.recode.vcf.gz``` \
+Run python file ```ipyrad_converter_treemix.py``` \
+Followed by ```ipyrad_treemix.py```
+
+**Dsuite**
+
+Download dsuite https://github.com/millanek/Dsuite \
+Uses svd.newick.txt output from SVDquartets \
+Run ```scripts/dsuite.sh```
+Outputs dsuite.fb.txt \
+To plot use dtools.py, which is part of the dsuite software\
+run\
+```python3 dtools.py dsuite.fb.txt inputs/svd.newick.txt```
+
+**Nucleotide Diversity**
+
+ANGSD needs to be downloaded in conda \
+Run \
+```diversity.sh```
+Plotting is done in R using ```Jenynsia_genetic_diversity.R```
 
 
 
