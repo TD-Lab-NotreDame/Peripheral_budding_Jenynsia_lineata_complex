@@ -77,12 +77,12 @@ To save the consenses tree in newick format run \
 
 **SNAPP**
 
-Beast2 v2.7.6 needs to be downloaded \
+Beast2 v2.7.7 needs to be downloaded \
 Run 2 times\
 ```scripts/SNAPP.sh``` 
 
 **BFD***
-Beast2 v2.4.8 needs to be downloaded \
+Beast2 v2.6.7 needs to be downloaded \
 Run\
 ```scripts/BFD.sh``` 
 
