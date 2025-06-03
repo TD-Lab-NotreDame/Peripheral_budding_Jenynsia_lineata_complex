@@ -93,13 +93,15 @@ Guide tree is generated from the two SNAPP runs consensus tree using the TreeAnn
 Run ```scripts/delineate.sh```
 
 **TreeMix**
+
 compress vcf file \
 ```bgzip inputs/filtered_final_94.recode.vcf > inputs/filtered_final_94.recode.vcf.gz``` \
 index the compressed file \
 ```tabix inputs/filtered_final_94.recode.vcf.gz``` \
 Run python file ```ipyrad_converter_treemix.py``` \
 Followed by ```ipyrad_treemix.py```
-Save output in folder names "tree" within the data folder for further analysis in R
+Save output in folder names "tree" within the data folder for further analysis in R\
+To plot use python file ```ipyrad_treemix_plot.py```
 
 **Dsuite**
 
