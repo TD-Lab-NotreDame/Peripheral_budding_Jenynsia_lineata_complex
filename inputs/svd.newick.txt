@@ -1,1 +1,1 @@
-(Outgroup,(onca:50,((AFlineata:100,luxata:100):99.9,(darwinii:100,lineata:100):100):100):50);
+(Outgroup,(onca:50,((lineataN:100,luxata:100):99.9,(darwini:100,lineata:100):100):100):50);
