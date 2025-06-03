@@ -18,7 +18,7 @@ For the 94 individuals dataset, include all fatsq files \
 Run \
 ```scripts/ddocent.sh``` \
 Rename output to TotalRawSNPs_83.vcf and ddocent_Final_83.recode.vcf after running on 83 individuals \
-Rename output to TotalRawSNPs_94.vcf and ddocent_Final_94.recode.vcf after running on 94 individuals \
+Rename output to TotalRawSNPs_94.vcf and ddocent_Final_94.recode.vcf after running on 94 individuals 
 
 **Filtering VCF files**
 
@@ -35,7 +35,7 @@ for 83 individuals dataset \
 for 30 individuals dataset \
 ```python vcf2phylip.py -i inputs/filtered_final_30_nomiss_LD_pruned_sub1000.vcf -f -n -b```\
 for 94 individuals dataset \
-```python vcf2phylip.py -i inputs/filtered_final_94_LD_pruned.recode.vcf -f -n -b```\
+```python vcf2phylip.py -i inputs/filtered_final_94_LD_pruned.recode.vcf -f -n -b```
 
 **PCA**
 
@@ -53,7 +53,7 @@ A PCA figure will be output
 PLINK needs to be installed in conda \
 run ```scripts/Jenynsia_admixture.sh``` \
 Outputs CV errors and files for plotting each K in r \
-Use ```admixture_plot.R``` to plot figure in R \
+Use ```admixture_plot.R``` to plot figure in R 
 
 **IQtree and RAXML**
 
@@ -69,7 +69,7 @@ No outgroup iqtree\
 No outgroup RAXML \
 ```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_83_LD_pruned.recode.min4.phy.varsites.phy -n T1``` \
 With an outgroup RAXML \
-```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_94_LD_pruned.recode.min4.phy.varsites.phy -n T2``` \
+```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_94_LD_pruned.recode.min4.phy.varsites.phy -n T2``` 
 
 **SVDQuartets**
 
@@ -87,13 +87,13 @@ To save the consenses tree in newick format run \
 
 Beast2 needs to be downloaded \
 Run 2 times\
-```scripts/SNAPP.sh``` \
+```scripts/SNAPP.sh``` 
 
 **DELINEATE**
 
 DELINEATE needs to be downloaded to conda\
 Guide tree is generated from the two SNAPP runs consensus tree using the TreeAnnotator application\
-Run ```scripts/delineate.sh```\
+Run ```scripts/delineate.sh```
 
 **TreeMix**
 compress vcf file \
