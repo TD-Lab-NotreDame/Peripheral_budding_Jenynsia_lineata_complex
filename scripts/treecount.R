@@ -4,6 +4,7 @@ library(ape)
 library(phangorn)
 
 # Read in your trees
+# these trees are the combination of the two SNAPP runs, combined using the LogCombiner application
 trees <- read.nexus("data/Jenysia_RAD_SNAPP_c.trees")
 
 #Check how many trees show onca as root, then lineataN spliting off, followed by luxata
