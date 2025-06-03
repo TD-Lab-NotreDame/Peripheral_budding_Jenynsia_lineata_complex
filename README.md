@@ -16,7 +16,9 @@ fastq files must be in the working directory \
 For the 83 and 30 individuals data set do not have J. obscura samples in the working directory \
 For the 94 individuals dataset, include all fatsq files \
 Run \
-```scripts/ddocent.sh```
+```scripts/ddocent.sh``` \
+Rename output to TotalRawSNPs_83.vcf and ddocent_Final_83.recode.vcf after running on 83 individuals \
+Rename output to TotalRawSNPs_94.vcf and ddocent_Final_94.recode.vcf after running on 94 individuals \
 
 **Filtering VCF files**
 
