@@ -3,7 +3,7 @@
   		lineataE : 1-9 31-39, 
 		luxata : 10-15,
 		lineataW : 16-30 40-44 80 82 83,
-		darwinii : 45-56,
+		darwini : 45-56,
 		lineatN : 57-62 78 79 81,
 		onca : 63-77;
   END;
