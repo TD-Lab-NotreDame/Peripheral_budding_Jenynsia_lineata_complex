@@ -18,8 +18,8 @@ vcftools --vcf ddocent_Final_83.recode.vcf --remove lowDP83.indv --recode --reco
 wait
 ##look at population levels of missing loci
 # popmap83 must be in working directory
-mawk '$2 == "lineataE"' popmap83 > 1.keep && mawk '$2 == "lineataW"' popmap83 > 2.keep && mawk '$2 == "AFlineata"' popmap83 > 3.keep \
-&& mawk '$2 == "onca"' popmap83 > 4.keep && mawk '$2 == "luxata"' popmap83 > 5.keep && mawk '$2 == "darwinii"' popmap83 > 6.keep
+mawk '$2 == "lineataE"' popmap83 > 1.keep && mawk '$2 == "lineataW"' popmap83 > 2.keep && mawk '$2 == "lineataN"' popmap83 > 3.keep \
+&& mawk '$2 == "onca"' popmap83 > 4.keep && mawk '$2 == "luxata"' popmap83 > 5.keep && mawk '$2 == "darwini"' popmap83 > 6.keep
 wait
 # filter missing loci by population
 vcftools --vcf filter1_83.recode.vcf --keep 1.keep --missing-site --out 1
@@ -107,8 +107,8 @@ grep -v '^#' filtered_final_30_nomiss_LD_pruned.recode.vcf | shuf | head -n 1000
 #wait
 ###look at population levels of missing loci
 ## popmap83 must be in working directory
-#mawk '$2 == "lineataE"' popmap94 > 1.keep && mawk '$2 == "lineataW"' popmap94 > 2.keep && mawk '$2 == "AFlineata"' popmap94 > 3.keep \
-#&& mawk '$2 == "onca"' popmap94 > 4.keep && mawk '$2 == "luxata"' popmap94 > 5.keep && mawk '$2 == "darwinii"' popmap94 > 6.keep && mawk '$2 == "obscura"' popmap94 > 7.keep
+#mawk '$2 == "lineataE"' popmap94 > 1.keep && mawk '$2 == "lineataW"' popmap94 > 2.keep && mawk '$2 == "lineataN"' popmap94 > 3.keep \
+#&& mawk '$2 == "onca"' popmap94 > 4.keep && mawk '$2 == "luxata"' popmap94 > 5.keep && mawk '$2 == "darwini"' popmap94 > 6.keep && mawk '$2 == "obscura"' popmap94 > 7.keep
 #wait
 ## filter missing loci by population
 #vcftools --vcf filter1_94.recode.vcf --keep 1.keep --missing-site --out 1
