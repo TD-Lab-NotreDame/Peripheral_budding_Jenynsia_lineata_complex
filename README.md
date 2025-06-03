@@ -61,14 +61,14 @@ IQtree and RAXML need to be installed in conda\
 Run\
 ```iqtree.sh``` \
 Run\
-```raxml.sh``` \
+```raxml.sh``` 
 
 **SVDQuartets**
 
 generate file for SVDQuartets \
 ``` cat inputs/filtered_final_83_LD_pruned.recode.min4.nexus inputs/taxpartitions.txt > inputs/svd.nexus```\
 PAUP needs to be installed and launched \
-Run \ 
+Run \
 ```exe inputs/svd.nexus``` \
 Then run \
 ```svdq taxpartition=fish showScores=no seed=1234568 bootstrap nreps=1000 treeFile=svd.tre;```
@@ -99,6 +99,7 @@ index the compressed file \
 ```tabix inputs/filtered_final_94.recode.vcf.gz``` \
 Run python file ```ipyrad_converter_treemix.py``` \
 Followed by ```ipyrad_treemix.py```
+Save output in folder names "tree" within the data folder for further analysis in R
 
 **Dsuite**
 
