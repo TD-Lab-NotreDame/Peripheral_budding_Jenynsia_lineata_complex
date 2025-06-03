@@ -3,7 +3,8 @@ library(readr)
 library(patchwork)
 
 #Import and clean raw data files
-file_paths <- list.files(path = "data/diversity0", pattern = "*.thetas.idx.pestPG", full.names = TRUE)
+# need to manually remove the "#" that is in the first line of each .pestPG file
+file_paths <- list.files(path = "data", pattern = "*.thetas.idx.pestPG", full.names = TRUE)
 # Use map to read in the data and add population identifier from file name
 combined_data <- file_paths %>%
   # Read each file
@@ -44,13 +45,13 @@ df$pi <- df$tP / df$nSites  # Convert to per-site π
 
 df <- df %>%
   mutate(Population = case_when(
-    Population=="luxata_0_thetas_per_site"~"luxata",
-    Population=="lineataEW_0_thetas_per_site"~"lineataEW",
-    Population=="lineataN_0_thetas_per_site"~"lineataN",
-    Population=="lineataW_0_thetas_per_site"~"lineataW",
-    Population=="lineataE_0_thetas_per_site"~"lineataE",
-    Population=="darwini_0_thetas_per_site"~"darwini",
-    Population=="onca_0_thetas_per_site"~"onca",
+    Population=="luxata_thetas_per_site"~"luxata",
+    Population=="lineataEW_thetas_per_site"~"lineataEW",
+    Population=="lineataN_thetas_per_site"~"lineataN",
+    Population=="lineataW_thetas_per_site"~"lineataW",
+    Population=="lineataE_thetas_per_site"~"lineataE",
+    Population=="darwini_thetas_per_site"~"darwini",
+    Population=="onca_thetas_per_site"~"onca",
     TRUE ~ Population))
 
 summary_stats <- df %>%
