@@ -39,6 +39,10 @@ world <- ne_countries(scale="medium", returnclass = "sf")
 
 # bounding box of interest
 bbox <- c(xmin = -80, xmax = -40, ymin = -40, ymax = -10)
+#get river information 
+rivers <- ne_download(scale = 10, type = "rivers_lake_centerlines", category = "physical", returnclass = "sf")
+# Crop to bounding box of your South America map
+rivers_cropped <- st_intersection(rivers, st_bbox(south_america_filtered) %>% st_as_sfc())
 
 # Crop the world map data to this bounding box
 south_america_filtered <- st_crop(world, bbox)
@@ -46,6 +50,7 @@ south_america_filtered <- st_crop(world, bbox)
 #plot
 ggplot(data = south_america_filtered) +
   geom_sf(fill = "lightgrey", color = "black", size = 0.3) +  # Custom fill and border color
+  geom_sf(data = rivers_cropped, color = "lightblue3", size = 0.3)+# adds rivers
   coord_sf(expand = FALSE) +  # Prevents padding around the map
   theme_minimal() +  # Minimal theme
   theme(
