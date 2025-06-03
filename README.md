@@ -57,19 +57,11 @@ Use ```admixture_plot.R``` to plot figure in R
 
 **IQtree and RAXML**
 
-IQtree and RAXML need to be installed in conda \ 
-First run IQtree to generate a file that will pass filters for only containing variant sites when using an ASC adjustment \
-No outgroup\
-```iqtree -s inputs/filtered_final_83_LD_pruned.recode.min4.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
-With an outgroup \
-```iqtree -s inputs/filtered_final_94_LD_pruned.recode.min4.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
-Use the output files that end in ".varsites.phy" for further analysis \
-No outgroup iqtree\
-```iqtree -s filtered_final_83_LD_pruned.recode.min4.phy.varsites.phy -st DNA -m GTR+G4+F+ASC -bb 1000 -alrt 1000``` \
-No outgroup RAXML \
-```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_83_LD_pruned.recode.min4.phy.varsites.phy -n T1``` \
-With an outgroup RAXML \
-```raxmlHPC -f a -m ASC_GTRGAMMA --asc-corr=lewis -p 12345 -x 12345 -# 1000 -s filtered_final_94_LD_pruned.recode.min4.phy.varsites.phy -n T2``` 
+IQtree and RAXML need to be installed in conda\
+Run\
+```iqtree.sh``` \
+Run\
+```raxml.sh``` \
 
 **SVDQuartets**
 
@@ -85,9 +77,14 @@ To save the consenses tree in newick format run \
 
 **SNAPP**
 
-Beast2 needs to be downloaded \
+Beast2 v2.7.6 needs to be downloaded \
 Run 2 times\
 ```scripts/SNAPP.sh``` 
+
+**BFD***
+Beast2 v2.4.8 needs to be downloaded \
+Run\
+```scripts/BFD.sh``` 
 
 **DELINEATE**
 
