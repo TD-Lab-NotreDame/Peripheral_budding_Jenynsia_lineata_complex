@@ -1,11 +1,11 @@
-branch	branch_descendants	Outgroup	onca	AFlineata	luxata	darwinii	lineataW	lineataE
+branch	branch_descendants	Outgroup	onca	lineataN	luxata	darwini	lineataW	lineataE
 b2	onca	nan	nan	nan	nan	nan	nan	nan
-b3	AFlineata,luxata,darwinii,lineataW,lineataE	nan	nan	nan	nan	nan	nan	nan
-b4	AFlineata,luxata	nan	0	nan	nan	nan	nan	nan
-b5	darwinii,lineataW,lineataE	nan	0	nan	nan	nan	nan	nan
-b6	AFlineata	nan	0	nan	nan	0	0	0
+b3	lineataN,luxata,darwini,lineataW,lineataE	nan	nan	nan	nan	nan	nan	nan
+b4	lineataN,luxata	nan	0	nan	nan	nan	nan	nan
+b5	darwini,lineataW,lineataE	nan	0	nan	nan	nan	nan	nan
+b6	lineataN	nan	0	nan	nan	0	0	0
 b7	luxata	nan	0	nan	nan	0	0	0
-b8	darwinii	nan	0	0	0	nan	nan	nan
+b8	darwini	nan	0	0	0	nan	nan	nan
 b9	lineataW,lineataE	nan	0	0	0	nan	nan	nan
 b10	lineataW	nan	0	0	0	0	nan	nan
 b11	lineataE	nan	0	0	0	0	nan	nan
