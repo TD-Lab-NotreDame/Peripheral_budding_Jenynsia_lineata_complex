@@ -12,7 +12,7 @@ custom_order = c('Jlux_08945BO', 'Jlux_08946BO', 'Jlux_08947BO', 'Jlux_17668BF',
 
 #For k=7
 
-K7 <- read_table("plink.7.Q.csv", 
+K7 <- read_table("data/plink.7.Q.csv", 
                   col_names = FALSE)
 popmap<-read.table("popmap.txt")
 K7<-cbind(K7,popmap)
@@ -33,7 +33,7 @@ K7<-ggplot(long,aes(x=V1,y=Probability,fill=Cluster))+geom_bar(stat='identity',p
 
 #For k=6
 
-K6 <- read_table("plink.6.Q.csv", 
+K6 <- read_table("data/plink.6.Q.csv", 
                  col_names = FALSE)
 popmap<-read.table("popmap.txt")
 K6<-cbind(K6,popmap)
@@ -56,7 +56,7 @@ K6<-ggplot(long,aes(x=V1,y=Probability,fill=Cluster))+geom_bar(stat='identity',p
 
 #For k=5
 
-K5 <- read_table("plink.5.Q.csv", 
+K5 <- read_table("data/plink.5.Q.csv", 
                  col_names = FALSE)
 popmap<-read.table("popmap.txt")
 K5<-cbind(K5,popmap)
