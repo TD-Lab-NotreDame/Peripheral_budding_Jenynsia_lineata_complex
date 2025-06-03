@@ -17,10 +17,14 @@ combined_data <- combined_data %>%
 combined_data <- combined_data %>%
   mutate(Contig = as.numeric(gsub("^dDocent_Contig_", "", Chr))) 
 
+colnames(combined_data)
+
+combined_data <- combined_data %>%
+  rename(meta = `X.indexStart.indexStop..firstPos_withData.lastPos_withData..WinStart.WinStop.`)
 
 df <- combined_data %>%
-  extract(
-    X.indexStart.indexStop..firstPos_withData.lastPos_withData..WinStart.WinStop.,
+  tidyr::extract(
+    meta,
     into = c("indexStartStop", "firstLast", "winStartStop"),
     regex = "\\(([^)]+)\\)\\(([^)]+)\\)\\(([^)]+)\\)"
   )
@@ -42,18 +46,6 @@ df <- df %>%
 df <- df %>% filter(nSites > 0)  # Only keep windows with data
 df$pi <- df$tP / df$nSites  # Convert to per-site π
 
-
-df <- df %>%
-  mutate(Population = case_when(
-    Population=="luxata_thetas_per_site"~"luxata",
-    Population=="lineataEW_thetas_per_site"~"lineataEW",
-    Population=="lineataN_thetas_per_site"~"lineataN",
-    Population=="lineataW_thetas_per_site"~"lineataW",
-    Population=="lineataE_thetas_per_site"~"lineataE",
-    Population=="darwini_thetas_per_site"~"darwini",
-    Population=="onca_thetas_per_site"~"onca",
-    TRUE ~ Population))
-
 summary_stats <- df %>%
   filter(!is.na(tP), nSites > 0) %>%
   mutate(pi_per_site = tP / nSites) %>%
@@ -65,11 +57,6 @@ summary_stats <- df %>%
     se_tajima = sqrt(Hmisc::wtd.var(Tajima, weights = nSites)) / sqrt(n())
   )
 
-summary_stats <- df %>%
-  group_by(Population) %>%
-  summarise(
-    mean_pi = mean(pi, na.rm = TRUE),
-    se_pi = sd(pi, na.rm = TRUE) / sqrt(n()))
 summary_stats <- summary_stats %>%
   mutate(group = case_when(
     Population == "darwini" ~ "bud",
