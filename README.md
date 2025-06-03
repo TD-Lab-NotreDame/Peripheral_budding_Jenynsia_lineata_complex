@@ -16,7 +16,7 @@ fastq files must be in the working directory \
 For the 83 and 30 individuals data set do not have J. obscura samples in the working directory \
 For the 94 individuals dataset, include all fatsq files \
 Run \
-``` dDocent scripts/ddocent_config_denovo.sh```
+```scripts/ddocent.sh```
 
 **Filtering VCF files**
 
