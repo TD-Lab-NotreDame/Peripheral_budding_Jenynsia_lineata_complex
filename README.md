@@ -6,7 +6,7 @@ The code in the *.sh files was written for use on an HPC sungrid engine system.
 
 Phylip and nexus files are also included from phylogenetic analyses.
 
-Genomic analyses:
+**Genomic analyses**
 
 **dDocent**
 
@@ -90,7 +90,8 @@ Run\
 
 DELINEATE needs to be downloaded to conda\
 Guide tree is generated from the two SNAPP runs consensus tree using the TreeAnnotator application\
-Run ```scripts/delineate.sh```
+Run ```scripts/delineate.sh```\
+Output of tree probabilty analysis can be found in the data folder under ```Delineata_tree_probabilty_output.json```
 
 **TreeMix**
 
