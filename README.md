@@ -1,4 +1,4 @@
-The files here are associated with "Peripheral budding following range expansion explains diversity and distribution of one-sided livebearing fish". Preprint available at https://doi.org/10.22541/au.174255499.93236941/v1
+The files here are associated with "Peripheral budding following range expansion explains diversity and distribution of one-sided livebearing fish". Publication available at https://doi.org/10.1111/mec.70023
 
 The scripts folder contains the scripts used in analyses, the inputs folder contains inputs for genomic analyses, the data folder contains data files used for *.R files.
 
